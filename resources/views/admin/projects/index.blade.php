@@ -25,6 +25,9 @@
                     <a href="{{  route('admin.projects.show', ['project' => $project->id])}}"><i class="fa-regular fa-eye"></i></a>
                 </td>
                 <td>
+                  <a href="{{  route('admin.projects.edit', ['project' => $project->id])}}"><i class="fa-regular fa-eye"></i></a>
+              </td>
+                <td>
                   <form action="{{ route('admin.projects.destroy', ['project' => $project->id]) }}" method="POST">
                     @csrf
                     @method('DELETE')
