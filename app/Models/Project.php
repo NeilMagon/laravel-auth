@@ -13,6 +13,7 @@ class Project extends Model
         'name',
         'slug',
         'client_name',
-        'summary'
+        'summary',
+        'cover_image'
     ];
 }

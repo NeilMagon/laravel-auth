@@ -14,6 +14,18 @@
             <input type="text" class="form-control" id="client_name" name="client_name" value="{{ $project->client_name }}">
         </div>
         <div class="mb-3">
+            <label for="cover_image" class="form-label">Immagine</label>
+            <input class="form-control" type="file" id="cover_image" name="cover_image">
+            
+            @if ($project->cover_image)
+                <div>
+                    <img src="{{ asset('storage/' . $project->cover_image) }}" alt="{{ $project->title }}">
+                </div>
+            @else
+                <small>Nessuna immagine caricata</small>
+            @endif
+        </div>
+        <div class="mb-3">
             <label for="summary" class="form-label">Descrizione</label>
             <textarea class="form-control" id="summary" rows="10" name="summary">{{ $project->summary }}</textarea>
         </div>
