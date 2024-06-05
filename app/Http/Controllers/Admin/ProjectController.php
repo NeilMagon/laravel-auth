@@ -43,7 +43,8 @@ class ProjectController extends Controller
         $request->validate([
             'name' => 'required|min:5|max:250|unique:projects,name',
             'client_name' => 'nullable|min:5',
-            'summary' => 'nullable|min:20'
+            'summary' => 'nullable|min:20',
+            'cover_image' => 'nullable|image|max:256'
         ]);
 
         $formData = $request->all();
@@ -101,7 +102,8 @@ class ProjectController extends Controller
                 Rule::unique('projects')->ignore($project)
             ],
             'client_name' => 'nullable|min:5',
-            'summary' => 'nullable|min:20'
+            'summary' => 'nullable|min:20',
+            'cover_image' => 'nullable|image|max:256'
         ]);
 
         $formData = $request->all();
